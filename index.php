@@ -14,7 +14,7 @@
         <img src="foto1.jpeg" alt="Foto Profil">
         <h1>MUHAMAD SHOLCHIN TAFSIR SRILINTANG</h1>
         <p>H1101251016 KELAS PRAKTIKUM PEMROGRAMAN WEB DASAR</p>
-        <p>Program Studi: SISTEM INFORMASI B</p>
+        <p>Program Studi: SISTEM INFORMASI A</p>
     </header>
 
     <nav class="nav">
@@ -27,7 +27,7 @@
     <main class="konten">
         <section id="tentang">
             <h2>Tentang Saya</h2>
-            <p>Halo Saya MUHAMAD SHOLCHIN TAFSIR SRILINTANG, mahasiswa Program Studi SISTEM INFORMASI B dengan NIM
+            <p>Halo Saya MUHAMAD SHOLCHIN TAFSIR SRILINTANG, mahasiswa Program Studi SISTEM INFORMASI A dengan NIM
                 H1101251016. Saya sedang mengikuti KELAS PRAKTIKUM PEMROGRAMAN WEB DASAR.</p>
             <p>Cita-cita saya menjadi seorang web developer yang hengker.</p>
         </section>
@@ -102,7 +102,7 @@
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 MUHAMAD SHOLCHIN TAFSIR SRILINTANG. Dibuat dengan HTML &amp; CSS.</p>
+        <p>&copy; 2026 MUHAMAD SHOLCHIN TAFSIR SRILINTANG. Dibuat dengan PHP &amp; CSS.</p>
     </footer>
 
 </body>
