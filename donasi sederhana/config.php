@@ -11,7 +11,7 @@
 $host = 'localhost';
 $dbname = 'donasi_app';
 $user = 'root';
-$pass = '';
+$pass = 'root'; // Password default MAMP biasanya 'root'
 
 try {
     // PDO = PHP Data Object, cara modern & aman untuk konek ke database
