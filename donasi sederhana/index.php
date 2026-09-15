@@ -44,7 +44,7 @@ function formatRupiah($angka) {
 <head>
     <meta charset="UTF-8">
     <title>Sistem Donasi Sederhana</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -142,6 +142,6 @@ function formatRupiah($angka) {
         </div>
     </div>
 
-    <script src="/js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

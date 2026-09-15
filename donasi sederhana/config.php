@@ -8,10 +8,10 @@
  */
 
 // Kredensial database Laragon (default: user root, password kosong)
-$host   = 'localhost';
+$host = 'localhost';
 $dbname = 'donasi_app';
-$user   = 'root';
-$pass   = '';
+$user = 'root';
+$pass = '';
 
 try {
     // PDO = PHP Data Object, cara modern & aman untuk konek ke database
