@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator BMI</title>
+    <style>
+        /* CSS Dasar sesuai dengan yang sudah dipelajari (Clean & Center) */
+        body { font-family: Arial, sans-serif; max-width: 450px; margin: 50px auto; padding: 20px; background: #f0f8ff; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
+        input { padding: 10px; margin: 10px 5px; font-size: 16px; width: 85%; box-sizing: border-box; }
+        button { padding: 12px 15px; margin: 10px 5px; font-size: 16px; background: #2ecc71; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;}
+        button:hover { background: #27ae60; }
+        .btn-reset { background: #e74c3c; }
+        .btn-reset:hover { background: #c0392b; }
+        
+        /* Hiasan CSS untuk area hasil */
+        .box-hasil { margin-top: 25px; padding: 15px; background: #ecf0f1; border-radius: 8px; border: 1px solid #bdc3c7; }
+        .hasil-angka { font-size: 32px; font-weight: bold; color: #2c3e50; margin: 10px 0; }
+        .hasil-status { font-size: 20px; font-weight: bold; color: #34495e; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>⚖️ Kalkulator BMI</h2>
+        <p style="color: #7f8c8d; margin-bottom: 20px;">Hitung Body Mass Index Anda</p>
+        
+        <!-- 2 Form Input: Berat (kg) dan Tinggi (cm) -->
+        <input type="number" id="inputBerat" placeholder="Masukkan Berat Badan (kg)">
+        <input type="number" id="inputTinggi" placeholder="Masukkan Tinggi Badan (cm)">
+        
+        <!-- Tombol Eksekusi -->
+        <button onclick="hitungBMI()">Hitung BMI</button>
+        <button onclick="reset()" class="btn-reset">Reset</button>
+        
+        <!-- Area Tampil Hasil -->
+        <div class="box-hasil">
+            <div>Angka BMI:</div>
+            <div class="hasil-angka" id="angkaBMI">-</div>
+            <div>Status Berat Badan:</div>
+            <div class="hasil-status" id="statusBMI">-</div>
+        </div>
+    </div>
+
+    <script>
+        function hitungBMI() {
+            // 1. Mengambil nilai input
+            let berat = parseFloat(document.getElementById('inputBerat').value);
+            let tinggiCm = parseFloat(document.getElementById('inputTinggi').value);
+
+            // Validasi Input (mencegah form kosong atau nilai minus)
+            if (isNaN(berat) || isNaN(tinggiCm) || berat <= 0 || tinggiCm <= 0) {
+                alert("Silakan masukkan nilai Berat dan Tinggi yang valid!");
+                return;
+            }
+
+            // 2. Rumus Dasar BMI
+            // Ubah dulu cm ke meter dengan membagi 100
+            let tinggiMeter = tinggiCm / 100;
+            // Rumus: Berat / (Tinggi dalam meter * Tinggi dalam meter)
+            let bmi = berat / (tinggiMeter * tinggiMeter);
+
+            // 3. Menentukan Status Berat Badan berdasarkan kriteria
+            let status = "";
+            
+            if (bmi < 18.5) {
+                status = "Kurus";
+            } else if (bmi <= 24.9) {
+                status = "Normal";
+            } else if (bmi <= 29.9) {
+                status = "Gemuk";
+            } else {
+                status = "Obesitas"; // BMI 30 ke atas
+            }
+
+            // 4. Menampilkan hasil ke layar
+            // toFixed(1) digunakan agar angka desimal di belakang koma hanya 1 digit (contoh: 22.5)
+            document.getElementById('angkaBMI').innerHTML = bmi.toFixed(1);
+            document.getElementById('statusBMI').innerHTML = status;
+        }
+
+        function reset() {
+            // Mengembalikan semua input dan output ke kondisi semula
+            document.getElementById('inputBerat').value = "";
+            document.getElementById('inputTinggi').value = "";
+            document.getElementById('angkaBMI').innerHTML = "-";
+            document.getElementById('statusBMI').innerHTML = "-";
+        }
+    </script>
+</body>
+</html>

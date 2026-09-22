@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Konversi Nilai Mahasiswa</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #f0f8ff;
+      }
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      input {
+        padding: 10px;
+        margin: 5px;
+        font-size: 16px;
+        width: 80%;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px 15px;
+        margin: 5px;
+        font-size: 16px;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: #2980b9;
+      }
+      .hasil {
+        font-size: 24px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>🎓 Konversi Nilai</h2>
+      <!-- Input bertipe number untuk skala 0-100 -->
+      <input
+        type="number"
+        id="inputNilai"
+        placeholder="Masukkan Nilai (0-100)"
+      /><br /><br />
+
+      <button onclick="konversi()">Konversi Nilai</button>
+      <button onclick="reset()" style="background: #e74c3c">Reset</button>
+
+      <!-- idTarget disiapkan untuk mencetak hasil -->
+      <div class="hasil">Grade: <span id="idTarget">-</span></div>
+    </div>
+
+    <script>
+      function konversi() {
+        // 1. Mengambil nilai dari input teks (Tipe Number)
+        let nilai = parseFloat(document.getElementById("inputNilai").value);
+
+        // Validasi: memastikan user memasukkan angka dan rentangnya 0-100
+        if (isNaN(nilai)) {
+          alert("Silakan masukkan nilai terlebih dahulu!");
+          return;
+        }
+        if (nilai < 0 || nilai > 100) {
+          alert("Nilai harus berada pada skala 0 hingga 100!");
+          return;
+        }
+
+        let grade;
+
+        // 2. Menggunakan percabangan if - else if - else sesuai kondisi pencetakan nilai
+        if (nilai >= 90) {
+          grade = "A";
+        } else if (nilai >= 80) {
+          grade = "B";
+        } else if (nilai >= 70) {
+          grade = "C";
+        } else if (nilai >= 60) {
+          grade = "D";
+        } else {
+          grade = "E"; // Nilai di bawah 60
+        }
+
+        // 3. Cetak hasilnya menggunakan document.getElementById('idTarget').innerHTML
+        document.getElementById("idTarget").innerHTML = grade;
+      }
+
+      function reset() {
+        // Mengosongkan form input dan mengembalikan hasil ke tampilan awal
+        document.getElementById("inputNilai").value = "";
+        document.getElementById("idTarget").innerHTML = "-";
+      }
+    </script>
+  </body>
+</html>

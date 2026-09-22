@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumpulan Project Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-hover: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.15), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.15), transparent 25%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            margin-top: 2rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+        .card:nth-child(4) { animation-delay: 0.4s; }
+        .card:nth-child(5) { animation-delay: 0.5s; }
+        .card:nth-child(6) { animation-delay: 0.6s; }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Kumpulan Project Mini</h1>
+            <p>Pilih salah satu project di bawah ini untuk melihat hasilnya</p>
+        </header>
+
+        <div class="grid">
+            <a href="1-kalkulator.html" class="card">
+                <div class="icon">🧮</div>
+                <h2>Kalkulator</h2>
+                <p>Aplikasi kalkulator sederhana untuk operasi matematika dasar.</p>
+            </a>
+            
+            <a href="BMI.html" class="card">
+                <div class="icon">⚖️</div>
+                <h2>Kalkulator BMI</h2>
+                <p>Aplikasi untuk menghitung Body Mass Index dan status berat badan.</p>
+            </a>
+
+            <a href="cek_Ganjil_Genap.html" class="card">
+                <div class="icon">🔢</div>
+                <h2>Cek Ganjil & Genap</h2>
+                <p>Program untuk menentukan apakah sebuah bilangan ganjil atau genap.</p>
+            </a>
+
+            <a href="deret_bilangan.html" class="card">
+                <div class="icon">📈</div>
+                <h2>Deret Bilangan</h2>
+                <p>Aplikasi yang dapat menampilkan deret angka sesuai input.</p>
+            </a>
+
+            <a href="konvesi_nilai_mahasiswa.html" class="card">
+                <div class="icon">🎓</div>
+                <h2>Konversi Nilai</h2>
+                <p>Program untuk mengubah nilai angka mahasiswa menjadi nilai huruf.</p>
+            </a>
+
+            <a href="konvesi_suhu.html" class="card">
+                <div class="icon">🌡️</div>
+                <h2>Konversi Suhu</h2>
+                <p>Alat untuk mengkonversi nilai suhu ke berbagai skala pengukuran.</p>
+            </a>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 Project Web. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

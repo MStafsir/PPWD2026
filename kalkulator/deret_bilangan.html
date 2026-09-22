@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas 2 - Deret Bilangan Ganjil</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 400px; margin: 50px auto; padding: 20px; background: #f0f8ff; }
+        .container { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
+        input { padding: 10px; margin: 5px; font-size: 16px; width: 80%; box-sizing: border-box; }
+        button { padding: 10px 15px; margin: 5px; font-size: 16px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #2980b9; }
+        .hasil { font-size: 18px; color: #2c3e50; margin-top: 20px; padding: 15px; background: #eaf2f8; border-radius: 6px; word-wrap: break-word; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2> Deret Ganjil</h2>
+        
+        <input type="number" id="inputN" placeholder="Masukkan nilai N">
+        <br><br>
+        <button onclick="tampilkanDeret()">Tampilkan</button>
+        
+        <div class="hasil" id="hasilTarget">-</div>
+    </div>
+
+    <script>
+        function tampilkanDeret() {
+            let n = parseFloat(document.getElementById('inputN').value);
+
+            // Validasi jika N < 1 atau kosong
+            if (isNaN(n) || n < 1) {
+                document.getElementById('hasilTarget').innerHTML = "Masukkan angka positif!";
+                return;
+            }
+
+            let teksHasil = "";
+
+            // Menggunakan perulangan for untuk mencari nilai ganjil
+            for (let i = 1; i <= n; i++) {
+                if (i % 2 !== 0) {
+                    // Menyusun teks agar berformat: 1, 3, 5, 7
+                    if (teksHasil === "") {
+                        teksHasil = i;
+                    } else {
+                        teksHasil = teksHasil + ", " + i;
+                    }
+                }
+            }
+
+            // Mencetak hasil ke layar
+            document.getElementById('hasilTarget').innerHTML = teksHasil;
+        }
+    </script>
+</body>
+</html>

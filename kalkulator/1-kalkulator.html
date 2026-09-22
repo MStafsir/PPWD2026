@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kalkulator Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 60px;
+            background: #000000;
+        }
+
+        .kalkulator {
+            background: rgb(152, 110, 56);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgb(199, 152, 206);
+            text-align: center;
+        }
+
+        input {
+            padding: 9px;
+            margin: 5px;
+            font-size: 16px;
+            width: 70%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            background: #00ddff;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        .hasil {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000000;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kalkulator">
+        <h2>🌋 Gunung Erupsi</h2>
+        <input type="number" id="angka1" placeholder="Jumlah Erupsi Gunung 2026"><br>
+        <input type="number" id="angka2" placeholder="Jumlah Erupsi Gunung 2027"><br><br>
+        <button onclick="tambah()">+</button>
+        <button onclick="kurang()">-</button>
+        <button onclick="kali()">×</button>
+        <button onclick="bagi()">÷</button>
+        <button onclick="reset()" style="background: #ffffff;">Reset</button>
+        <div class="hasil">Hasil: <span id="hasilAngka">0</span></div>
+    </div>
+    <!-- Jarak / spasi antar elemen yang bisa diatur tingginya -->
+    <div style="height: 50px;"></div>
+    <div class="kalkulator">
+        <h2>🌋 Gunung Erupsi</h2>
+        <input type="number" id="angka1" placeholder="Jumlah Erupsi Gunung 2026"><br>
+        <input type="number" id="angka2" placeholder="Jumlah Erupsi Gunung 2027"><br><br>
+        <button onclick="tambah()">+</button>
+        <button onclick="kurang()">-</button>
+        <button onclick="kali()">×</button>
+        <button onclick="bagi()">÷</button>
+        <button onclick="reset()" style="background: #ffffff;">Reset</button>
+        <div class="hasil">Hasil: <span id="hasilAngka">0</span></div>
+    </div>
+
+    <script>
+        // Penjelasan: document.getElementById digunakan untuk mengambil nilai dari tag HTML
+        function tambah() {
+            let a = Number(document.getElementById('angka1').value);
+            let b = Number(document.getElementById('angka2').value);
+            document.getElementById('hasilAngka').innerHTML = a + b;
+        }
+
+        function kurang() {
+            let a = Number(document.getElementById('angka1').value);
+            let b = Number(document.getElementById('angka2').value);
+            document.getElementById('hasilAngka').innerHTML = a - b;
+        }
+
+        function kali() {
+            let a = Number(document.getElementById('angka1').value);
+            let b = Number(document.getElementById('angka2').value);
+            document.getElementById('hasilAngka').innerHTML = a * b;
+        }
+
+        function bagi() {
+            let a = Number(document.getElementById('angka1').value);
+            let b = Number(document.getElementById('angka2').value);
+
+            // Validasi pencegahan pembagian dengan angka 0
+            if (b === 0) {
+                alert('Peringatan: Tidak bisa membagi angka dengan 0!');
+                return;
+            }
+            document.getElementById('hasilAngka').innerHTML = a / b;
+        }
+
+        function reset() {
+            document.getElementById('angka1').value = "";
+            document.getElementById('angka2').value = "";
+            document.getElementById('hasilAngka').innerHTML = '0';
+        }
+    </script>
+</body>
+
+</html>
