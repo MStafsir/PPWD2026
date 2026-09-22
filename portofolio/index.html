@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portofolio Mahasiswa Sistem Informasi dengan latar belakang awan pagi interaktif.">
   <title>MyPortofolio</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- Fullscreen interactive morning cloud background -->
+  <canvas id="cloud-canvas"></canvas>
+  <div id="cloud-overlay"></div>
+  <div id="cloud-fallback" class="cloud-fallback" aria-hidden="true"></div>
+
   <!-- Navigasi -->
   <nav>
     <div class="container">
@@ -21,11 +27,18 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container">
+    <div class="container hero-container">
       <div class="hero-content">
         <h1>Halo, Saya <span id="typing-text"></span></h1>
         <p>Mahasiswa Sistem Informasi</p>
         <a href="contact.html" class="btn">Hubungi Saya</a>
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="blob-glow"></div>
+        <div class="blob-frame">
+          <img src="images/foto porto.jpg" alt="Muhamad Sholichin" class="blob-img">
+          <div class="blob-shimmer"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -35,7 +48,7 @@
     <div class="container">
       <h2>Proyek Saya</h2>
       <div class="project-grid" id="project-grid">
-        <!-- Data proyek akan diisi otomatis oleh JavaScript -->
+        <!-- Dimuat secara dinamis melalui JavaScript -->
       </div>
     </div>
   </section>
