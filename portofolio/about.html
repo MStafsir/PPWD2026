@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tentang Saya - Profil Mahasiswa Sistem Informasi.">
+  <title>About — MyPortofolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Fullscreen interactive morning cloud background -->
+  <canvas id="cloud-canvas"></canvas>
+  <div id="cloud-overlay"></div>
+  <div id="cloud-fallback" class="cloud-fallback" aria-hidden="true"></div>
+
+  <!-- Navigasi -->
+  <nav>
+    <div class="container">
+      <div class="logo">MyPortofolio</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header Halaman -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Tentang Saya</h1>
+      <p>Mengenal latar belakang, minat, dan keahlian saya</p>
+    </div>
+  </header>
+
+  <!-- Konten Utama -->
+  <main class="content-section">
+    <div class="container">
+      <article class="card-panel">
+        <h2>Profil Singkat</h2>
+        <p>
+          Saya adalah seorang mahasiswa Sistem Informasi yang memiliki minat mendalam pada pengembangan web, perancangan antarmuka pengguna (UI/UX), dan sistem informasi interaktif.
+        </p>
+        <p>
+          Fokus utama saya adalah membangun aplikasi web yang berkinerja tinggi, mudah diakses oleh semua pengguna (aksesibilitas), dan memiliki estetika visual yang tertata rapi serta berkarakter.
+        </p>
+
+        <h2 style="margin-top: 32px;">Keahlian & Teknologi</h2>
+        <p>
+          Teknologi yang sering saya gunakan dalam pengerjaan tugas dan proyek:
+        </p>
+        <ul style="padding-left: 24px; color: var(--slate); line-height: 1.8;">
+          <li><strong>Frontend:</strong> HTML5 Semantik, CSS Modern, JavaScript (ES6+), WebGL Shader</li>
+          <li><strong>Backend:</strong> PHP, MySQL / MariaDB</li>
+          <li><strong>Tools:</strong> Git, GitHub, Laragon, VS Code</li>
+        </ul>
+      </article>
+
+      <!-- Galeri Interaktif Bento Grid -->
+      <section class="bento-section">
+        <div class="bento-header">
+          <h2>Galeri Foto & Aktivitas</h2>
+          <p>Eksplorasi dokumentasi interaktif dalam format Bento Grid. Anda dapat memindahkan kartu foto ke mana saja atau menarik sudutnya untuk memperbesar tampilan.</p>
+          <div class="bento-badges">
+            <span class="bento-badge">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+              Klik & Geser Bebas (Drag)
+            </span>
+            <span class="bento-badge">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              Tarik Ujung Sudut Kanan Bawah (Resize)
+            </span>
+            <button type="button" id="bento-reset-btn" class="bento-reset-btn" title="Kembalikan susunan awal Bento Grid">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              Tata Ulang Grid
+            </button>
+          </div>
+        </div>
+
+        <div class="bento-playground" id="bento-playground">
+          <!-- Item 1 (Wide Bento) -->
+          <div class="bento-card bento-span-2" data-index="1">
+            <div class="bento-card-inner">
+              <img src="images/1.avif" alt="Dokumentasi 1" loading="lazy">
+              <div class="bento-caption">Dokumentasi 01</div>
+            </div>
+            <div class="bento-resize-handle" title="Tarik untuk mengubah ukuran"></div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="bento-card" data-index="2">
+            <div class="bento-card-inner">
+              <img src="images/2.avif" alt="Dokumentasi 2" loading="lazy">
+              <div class="bento-caption">Dokumentasi 02</div>
+            </div>
+            <div class="bento-resize-handle" title="Tarik untuk mengubah ukuran"></div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="bento-card" data-index="3">
+            <div class="bento-card-inner">
+              <img src="images/3.avif" alt="Dokumentasi 3" loading="lazy">
+              <div class="bento-caption">Dokumentasi 03</div>
+            </div>
+            <div class="bento-resize-handle" title="Tarik untuk mengubah ukuran"></div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="bento-card" data-index="4">
+            <div class="bento-card-inner">
+              <img src="images/4.avif" alt="Dokumentasi 4" loading="lazy">
+              <div class="bento-caption">Dokumentasi 04</div>
+            </div>
+            <div class="bento-resize-handle" title="Tarik untuk mengubah ukuran"></div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="bento-card" data-index="5">
+            <div class="bento-card-inner">
+              <img src="images/5.avif" alt="Dokumentasi 5" loading="lazy">
+              <div class="bento-caption">Dokumentasi 05</div>
+            </div>
+            <div class="bento-resize-handle" title="Tarik untuk mengubah ukuran"></div>
+          </div>
+
+          <!-- Item 6 (Wide Bento) -->
+          <div class="bento-card bento-span-2" data-index="6">
+            <div class="bento-card-inner">
+              <img src="images/6.avif" alt="Dokumentasi 6" loading="lazy">
+              <div class="bento-caption">Dokumentasi 06</div>
+            </div>
+            <div class="bento-resize-handle" title="Tarik untuk mengubah ukuran"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 MyPortofolio</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
