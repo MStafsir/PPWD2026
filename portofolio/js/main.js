@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleHTML = `
       <div class="theme-toggle-container">
         <label class="theme-toggle" for="dark-mode-switch" title="Beralih Mode Terang / Gelap">
-          <input type="checkbox" id="dark-mode-switch" ${isInitialDark ? 'checked' : ''}>
+          <input type="checkbox" id="dark-mode-switch" aria-label="Toggle Dark Mode" ${isInitialDark ? 'checked' : ''}>
           <div class="toggle-track">
             <!-- Day Sky (Clouds) -->
             <div class="toggle-clouds">
@@ -76,7 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('cloud-canvas');
   const fallback = document.getElementById('cloud-fallback');
 
-  if (canvas) {
+  setTimeout(() => {
+    if (canvas) {
     const gl = canvas.getContext('webgl', {
       antialias: false,
       alpha: false,
@@ -384,7 +385,15 @@ document.addEventListener('DOMContentLoaded', () => {
           let lastTimestamp = performance.now();
 
           function render(timestamp) {
-            const delta = Math.min((timestamp - lastTimestamp) * 0.001, 0.1);
+            const deltaMs = timestamp - lastTimestamp;
+            
+            // FPS throttle: 30 FPS cap for mobile to reduce GPU workload
+            if (window.innerWidth <= 768 && deltaMs < 33) {
+              requestAnimationFrame(render);
+              return;
+            }
+
+            const delta = Math.min(deltaMs * 0.001, 0.1);
             lastTimestamp = timestamp;
 
             if (isPageVisible) {
@@ -414,6 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+  }, 100);
 
   // --- 2. Hero Typewriter Animation ---
   const typingText = document.getElementById('typing-text');
