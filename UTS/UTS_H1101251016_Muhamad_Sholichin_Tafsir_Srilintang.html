@@ -5,34 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UTS - Konversi Mata Uang</title>
     <style>
-        /*CSS BMI*/
         body { font-family: Arial, sans-serif; 
             background: #f0f8ff; 
             margin: 0; padding: 0; 
             display: flex; 
             flex-direction: column; 
 
-            /*jarak flooter bawah ke mid*/
             min-height: 100vh; }
         
-
         header, footer { background: #2c3e50; 
                         color: white; 
                         text-align: center; 
                         padding: 15px; }
 
-        /*tulisan header nama sya*/
         header p { margin: 5px 0 0 0; 
                 color: #fcfcfc; }
 
-        /*ukuran tabel konvers ny*/
         main { flex: 1; display: flex; 
                         justify-content: center; 
                         align-items: center; 
                         padding: 50px; }
-        
 
-        /*section BMI*/
         section { background: white; 
             padding: 30px; 
             border-radius: 10px; 
@@ -73,7 +66,6 @@
         .btn-reset { background: #e74c3c; }
         .btn-reset:hover { background: #c0392b; }
         
-        /*BMI*/
         #hasilContainer_H1101251016 { margin-top: 25px; 
             padding: 15px; 
             background: #737b87; 
@@ -86,7 +78,6 @@
             color: #f7f7f7; 
             margin: 10px 0; }
         
-        /*Media Query*/
         @media (max-width: 400px) {
             .tombol-grup { flex-direction: column; }
             button { width: 100%; margin: 5px 0; }
@@ -95,7 +86,7 @@
 </head>
 <body>
     <header>
-        <h2>UTS Praktikum Web Dasar</h2>
+        <h2>UTS Praktikum Pemrograman Web Dasar</h2>
         <p>H1101251016 - Muhamad Sholichin Tafsir Srilintang</p>
     </header>
 
@@ -123,14 +114,11 @@
         </section>
     </main>
 
-
     <footer>
         <p>&copy; 2026 Praktikum Pemrograman Web</p>
     </footer>
 
-
     <script>
-        /*1. Data kurs (hardcode) berdasarkan IDR*/
         const kurs_H1101251016= { IDR: 1, USD: 18000, EUR: 1600 };
         
         const inputNominal = document.getElementById('nominal_H1101251016');
@@ -145,13 +133,11 @@
             let nominal = parseFloat(inputNominal.value);
             let mataUang = selectAsal.value;
             
-            /*2. biar gk tidak kosong*/
             if (isNaN(nominal) || nominal < 0) {
                 alert('Silakan masukkan jumlah uang yang valid!');
                 return;
             }
 
-            /*3. Logika konversi: Ubah semua ke IDR dulu, lalu bagi dengan kurs target*/
             let nilaiIDR = nominal;
             if (mataUang === 'USD') nilaiIDR = nominal * kurs_H1101251016.USD;
             if (mataUang === 'EUR') nilaiIDR = nominal * kurs_H1101251016.EUR;
