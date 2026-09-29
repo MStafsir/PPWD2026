@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTS - Konversi Mata Uang</title>
+    <style>
+        /*CSS BMI*/
+        body { font-family: Arial, sans-serif; 
+            background: #f0f8ff; 
+            margin: 0; padding: 0; 
+            display: flex; 
+            flex-direction: column; 
+
+            /*jarak flooter bawah ke mid*/
+            min-height: 100vh; }
+        
+
+        header, footer { background: #2c3e50; 
+                        color: white; 
+                        text-align: center; 
+                        padding: 15px; }
+
+        /*tulisan header nama sya*/
+        header p { margin: 5px 0 0 0; 
+                color: #fcfcfc; }
+
+        /*ukuran tabel konvers ny*/
+        main { flex: 1; display: flex; 
+                        justify-content: center; 
+                        align-items: center; 
+                        padding: 50px; }
+        
+
+        /*section BMI*/
+        section { background: white; 
+            padding: 30px; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            text-align: center; 
+            width: 100%; 
+            max-width: 450px; }
+
+        h3 { margin-top: 0; 
+            color: #333; 
+            font-size: 24px; }
+
+        input, select { padding: 10px; 
+            margin: 10px 0; 
+            font-size: 16px; 
+            width: 100%; 
+            box-sizing: border-box; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; }
+
+        .tombol-grup { display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+            margin-top: 10px; }
+
+        button { padding: 12px 15px; 
+            margin: 5px; font-size: 16px; 
+            background: #2ecc71; 
+            color: white; border: none; 
+            border-radius: 5px; cursor: pointer; 
+            font-weight: bold; 
+            flex: 1; 
+            min-width: 90px; }
+
+        button:hover { background: #27ae60; }
+        .btn-swap { background: #3498db; }
+        .btn-swap:hover { background: #2980b9; }
+        .btn-reset { background: #e74c3c; }
+        .btn-reset:hover { background: #c0392b; }
+        
+        /*BMI*/
+        #hasilContainer_H1101251016 { margin-top: 25px; 
+            padding: 15px; 
+            background: #737b87; 
+            border-radius: 8px; 
+            border: 1px solid #fefefe; 
+            display: none; }
+
+        .hasil-angka { font-size: 20px; 
+            font-weight: bold; 
+            color: #f7f7f7; 
+            margin: 10px 0; }
+        
+        /*Media Query*/
+        @media (max-width: 400px) {
+            .tombol-grup { flex-direction: column; }
+            button { width: 100%; margin: 5px 0; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>UTS Praktikum Web Dasar</h2>
+        <p>H1101251016 - Muhamad Sholichin Tafsir Srilintang</p>
+    </header>
+
+    <main>
+        <section>
+            <h3>💵 Konversi Mata Uang</h3>
+            <p style="color: #000000; margin-bottom: 20px;">Hitung Kurs IDR - USD - EUR</p>
+            <input type="number" id="nominal_H1101251016" placeholder="Masukkan Jumlah Uang" min="0" step="any">
+            <select id="asal_H1101251016">
+                <option value="IDR">IDR (Rupiah)</option>
+                <option value="USD">USD (Dolar)</option>
+                <option value="EUR">EUR (Euro)</option>
+            </select>
+
+            <div class="tombol-grup">
+                <button type="button" id="btnHitung_H1101251016">Hitung</button>
+                <button type="button" id="btnSwap_H1101251016" class="btn-swap">Swap</button>
+                <button type="button" id="btnReset_H1101251016" class="btn-reset">Reset</button>
+            </div>
+            <div id="hasilContainer_H1101251016">
+                <div>Hasil Konversi:</div>
+                <div class="hasil-angka" id="hasil1_H1101251016">-</div>
+                <div class="hasil-angka" id="hasil2_H1101251016">-</div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2026 Praktikum Pemrograman Web</p>
+    </footer>
+
+
+    <script>
+        /*1. Data kurs (hardcode) berdasarkan IDR*/
+        const kurs_H1101251016= { IDR: 1, USD: 18000, EUR: 1600 };
+        
+        const inputNominal = document.getElementById('nominal_H1101251016');
+        const selectAsal = document.getElementById('asal_H1101251016');
+        const containerHasil = document.getElementById('hasilContainer_H1101251016');
+
+        function formatAngka(angka) {
+            return angka.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        document.getElementById('btnHitung_H1101251016').onclick = function() {
+            let nominal = parseFloat(inputNominal.value);
+            let mataUang = selectAsal.value;
+            
+            /*2. biar gk tidak kosong*/
+            if (isNaN(nominal) || nominal < 0) {
+                alert('Silakan masukkan jumlah uang yang valid!');
+                return;
+            }
+
+            /*3. Logika konversi: Ubah semua ke IDR dulu, lalu bagi dengan kurs target*/
+            let nilaiIDR = nominal;
+            if (mataUang === 'USD') nilaiIDR = nominal * kurs_H1101251016.USD;
+            if (mataUang === 'EUR') nilaiIDR = nominal * kurs_H1101251016.EUR;
+
+            containerHasil.style.display = 'block';
+            let out1 = document.getElementById('hasil1_H1101251016');
+            let out2 = document.getElementById('hasil2_H1101251016');
+
+            if (mataUang === 'IDR') {
+                out1.innerText = `USD: $ ${formatAngka(nilaiIDR / kurs_H1101251016.USD)}`;
+                out2.innerText = `EUR: € ${formatAngka(nilaiIDR / kurs_H1101251016.EUR)}`;
+            } else if (mataUang === 'USD') {
+                out1.innerText = `IDR: Rp ${formatAngka(nilaiIDR)}`;
+                out2.innerText = `EUR: € ${formatAngka(nilaiIDR / kurs_H1101251016.EUR)}`;
+            } else {
+                out1.innerText = `IDR: Rp ${formatAngka(nilaiIDR)}`;
+                out2.innerText = `USD: $ ${formatAngka(nilaiIDR / kurs_H1101251016.USD)}`;
+            }
+        };
+
+        document.getElementById('btnSwap_H1101251016').onclick = function() {
+            if (selectAsal.value === 'IDR') selectAsal.value = 'USD';
+            else if (selectAsal.value === 'USD') selectAsal.value = 'EUR';
+            else selectAsal.value = 'IDR';
+            
+            if (inputNominal.value) document.getElementById('btnHitung_H1101251016').click();
+        };
+
+        document.getElementById('btnReset_H1101251016').onclick = function() {
+            inputNominal.value = '';
+            selectAsal.value = 'IDR';
+            containerHasil.style.display = 'none';
+        };
+    </script>
+</body>
+</html>

@@ -475,8 +475,15 @@ document.addEventListener('DOMContentLoaded', () => {
         desc: 'Form kontak dan validasi data interaktif', 
         image: 'images/form.avif', 
         url: 'contact.html' 
-      }
+      },
+      { 
+        title: 'Konversi Mata Uang - UTS', 
+        desc: 'Konversi Mata Uang iDR KE USD DAN EUR', 
+        image: 'images/kalkulator.avif', 
+        url: '../UTS/UTS_H1101251016_Muhamad_Sholichin_Tafsir_Srilintang.html' 
+      },
     ];
+
 
     projects.forEach(project => {
       const card = document.createElement('article');
