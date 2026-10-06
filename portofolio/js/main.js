@@ -482,6 +482,12 @@ document.addEventListener('DOMContentLoaded', () => {
         image: 'images/kalkulator.avif', 
         url: '../UTS/UTS_H1101251016_Muhamad_Sholichin_Tafsir_Srilintang.html' 
       },
+      { 
+        title: 'Praktikum jQuery', 
+        desc: 'Website profile interaktif dengan manipulasi DOM, efek animasi, dan validasi form jQuery', 
+        image: 'images/jquery.avif', 
+        url: '../praktikum-jquery/file.html' 
+      },
     ];
 
 

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+    <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#172554"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="600" height="360" fill="url(#bgGrad)"/>
+
+  <!-- Glow Accents -->
+  <circle cx="90" cy="80" r="120" fill="#2563eb" opacity="0.18" filter="blur(40px)"/>
+  <circle cx="510" cy="280" r="140" fill="#38bdf8" opacity="0.12" filter="blur(50px)"/>
+
+  <!-- Top Title / Badge -->
+  <rect x="35" y="24" width="168" height="26" rx="13" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="47" y="41" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700">⚡ JQUERY 3.7.1 • DOM &amp; EFEK</text>
+
+  <!-- Central Mockup Card -->
+  <g filter="url(#shadow)">
+    <rect x="35" y="65" width="530" height="265" rx="16" fill="url(#cardGrad)" stroke="#cbd5e1" stroke-width="1.5"/>
+
+    <!-- Left Side: Profile Andi Pratama -->
+    <!-- Avatar Circle -->
+    <circle cx="85" cy="115" r="30" fill="url(#blueGrad)"/>
+    <!-- Robot Silhouette SVG inside Avatar -->
+    <path d="M85 99 a2 2 0 0 1 2 2 v1.5 h2 a3 3 0 0 1 3 3 v2 h1 a2 2 0 0 1 2 2 v3 a2 2 0 0 1-2 2 h-1 v1 a3 3 0 0 1-3 3 h-6 a3 3 0 0 1-3-3 v-1 h-1 a2 2 0 0 1-2-2 v-3 a2 2 0 0 1 2-2 h1 v-2 a3 3 0 0 1 3-3 h2 v-1.5 a2 2 0 0 1 2-2 z m-3 8 a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3 z m6 0 a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3 z m-5 6 h4 a1 1 0 0 0 0-2 h-4 a1 1 0 0 0 0 2 z" fill="#ffffff"/>
+
+    <!-- Name & Role -->
+    <text x="128" y="112" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800">Andi Pratama</text>
+    <text x="128" y="132" fill="#2563eb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">Front-End Developer</text>
+
+    <!-- Meta Details: Location & Email -->
+    <text x="65" y="174" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">📍 Jakarta, Indonesia</text>
+    <text x="65" y="198" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">✉️ andi@example.com</text>
+
+    <!-- Button: Ubah Profil -->
+    <rect x="65" y="222" width="125" height="34" rx="17" fill="url(#btnGrad)"/>
+    <text x="86" y="244" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">🔄 Ubah Profil</text>
+
+    <!-- Divider Line -->
+    <line x1="265" y1="85" x2="265" y2="305" stroke="#e2e8f0" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+    <!-- Right Side: Tinggalkan Pesan -->
+    <text x="290" y="105" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700">💬 Tinggalkan Pesan</text>
+
+    <!-- Input Nama -->
+    <rect x="290" y="122" width="245" height="32" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+    <text x="306" y="143" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">Nama Anda</text>
+
+    <!-- Input Email -->
+    <rect x="290" y="164" width="245" height="32" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+    <text x="306" y="185" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11.5">Email Anda</text>
+
+    <!-- Input Pesan (Mini textarea) -->
+    <rect x="290" y="206" width="245" height="42" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.2"/>
+    <text x="306" y="226" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11">Tulis pesan Anda...</text>
+
+    <!-- Button: Kirim -->
+    <rect x="290" y="258" width="88" height="32" rx="16" fill="url(#btnGrad)"/>
+    <text x="312" y="279" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700">✈️ Kirim</text>
+
+    <!-- Mini Validation Badge -->
+    <rect x="390" y="261" width="145" height="26" rx="6" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+    <text x="402" y="278" fill="#059669" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10.5" font-weight="600">✓ Validasi Real-time</text>
+  </g>
+</svg>
